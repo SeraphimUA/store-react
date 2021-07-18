@@ -1,0 +1,18 @@
+.ProductInBasket {
+    display: flex;
+    width: 500px;
+    align-items: center;
+  }
+  
+  .product-image {
+    width: 40%;
+  }
+  
+  .product-image img {
+    height: 50px;
+  }
+  
+.product-title,
+.product-price {
+    width: 15%;
+  }

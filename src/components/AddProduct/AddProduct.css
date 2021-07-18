@@ -1,0 +1,9 @@
+.AddProduct {
+    grid-area: addBtn;
+}
+
+.button {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid red;
+}

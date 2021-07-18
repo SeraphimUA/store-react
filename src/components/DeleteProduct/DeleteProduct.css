@@ -1,0 +1,10 @@
+.DeleteProduct {
+    text-align: center;
+    width: 15%;
+}
+
+.button {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid red;
+}

@@ -1,0 +1,16 @@
+.ProductCard {
+    margin: 5px;
+    display: grid;
+  
+    width: 300px;
+  
+    grid-template-areas: 
+     "img img"
+     "title price"
+     "count count"
+     "addBtn addBtn"
+  }
+
+.ProductCard > * {
+    width: 100%;
+  }
