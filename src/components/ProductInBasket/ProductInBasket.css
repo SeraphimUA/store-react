@@ -4,15 +4,26 @@
     align-items: center;
   }
   
-  .product-image {
+.basket-image {
     width: 40%;
-  }
+}
   
-  .product-image img {
+.basket-image img {
     height: 50px;
-  }
+}
   
-.product-title,
-.product-price {
+.basket-title, .basket-price {
     width: 15%;
-  }
+}
+
+.basket-button {
+    margin: 0 5px;
+    background-color: aquamarine;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.basket-remove {
+    padding: 5px;
+    background-color: lightcoral;
+}

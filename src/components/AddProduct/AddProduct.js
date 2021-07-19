@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./AddProduct.css";
 
-export default function AddProduct(props) {
+export default function AddProduct() {
     return (
         <div className="AddProduct">
-            <button className="button" onClick={putProduct}>Add</button>
+            <button className="button">Add</button>
         </div>
     )
 }
