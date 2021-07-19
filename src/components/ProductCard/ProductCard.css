@@ -1,14 +1,10 @@
 .ProductCard {
-    margin: 5px;
-    display: grid;
+    margin: 5px auto;
+    padding: 5px;
+    display: block;
+    border: 1px solid #ccc;
   
     width: 300px;
-  
-    grid-template-areas: 
-     "img img"
-     "title price"
-     "count count"
-     "addBtn addBtn"
   }
 
 .ProductCard > * {

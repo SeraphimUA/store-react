@@ -1,0 +1,11 @@
+.product-img img {
+    float: left;
+    height: 300px;
+    margin: 10px;
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: navy;
+}

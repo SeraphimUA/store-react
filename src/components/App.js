@@ -1,30 +1,13 @@
+import { productItems } from '../productsArray';
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 import ProductsList from './ProductsList/ProductsList'
 import Basket from './Basket/Basket';
 import Total from './Total/Total';
-
-const productItems = [{
-  id: 1,
-  title: "Чашка",
-  price: 159,
-  image: "https://prostomayki.com.ua/components/com_virtuemart/shop_image/product/105485_Chashka_s_arbuzom1546744202.jpg"
-},{
-  id: 2,
-  title: "Футболка",
-  price: 299,
-  image: "https://maikoff.ua/uploaded/prints_spool/2/p1640l2436w240o80t1c1front0big-muzhskaya-futbolka-arbuz.jpg"
-},{
-  id: 3,
-  title: "Кепка",
-  price: 239,
-  image: "https://content.rozetka.com.ua/goods/images/big/4537171.jpg"
-},{
-  id: 4,
-  title: "Браслет",
-  price: 249,
-  image: "https://ds1.skrynya.ua/products/p879351_5b27ee4593d7f.jpg"
-}];
+import NavMenu from './NavMenu/NavMenu';
+import ProductCard from './ProductCard/ProductCard';
+import ProductDescr from './ProductDescr/ProductDescr';
 
 const updateBasket = (basket, newProduct, index) => {
   // if count === 0 then remove product from basket
@@ -126,16 +109,35 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Store</h1>
-      <ProductsList products={productItems} addProductInBasket={addProductInBasket} />
-      <h1>Basket</h1>
-      <Basket
-        basket={basketState.basket}
-        addProductInBasket={addProductInBasket} 
-        reduceProductInBasket={reduceProductInBasket}
-        removeProductFromBasket={removeProductFromBasket}
-      />
-      <Total basket={basketState.basket} />
+      <Router>
+        <div>
+          <NavMenu />
+          <Switch>
+            <Route exact path="/" children={() => {
+              return (<>
+                <h1>Магазин</h1>
+                <ProductsList products={productItems} addProductInBasket={addProductInBasket} />
+              </>)
+            }} />
+            <Route path="/basket" children={() => {
+              return (
+                <>
+                  <h1>Корзина</h1>
+                  <Basket
+                    basket={basketState.basket}
+                    addProductInBasket={addProductInBasket} 
+                    reduceProductInBasket={reduceProductInBasket}
+                    removeProductFromBasket={removeProductFromBasket}
+                  />
+                  <Total basket={basketState.basket} />
+                </>
+              )
+            }} />
+            <Route path="/products/:id(\d+)" component={ProductDescr} />
+            <Route children={() => <h2>Not found</h2>} />
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }

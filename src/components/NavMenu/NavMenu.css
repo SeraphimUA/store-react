@@ -1,0 +1,31 @@
+.NavMenu {
+    background-color: #666;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.NavMenuList {
+    list-style-type: none;
+}
+
+.NavMenuItem {
+    float: left;
+}
+
+.NavMenuItem a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.NavMenuItem a:hover {
+    background-color: #111;
+}
+
+.NavMenuItem a:active {
+    background-color: #222;
+}
